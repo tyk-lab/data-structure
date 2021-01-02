@@ -1,36 +1,26 @@
 #include <iostream>
+#include "SmartPointer.h"
+
 using namespace std;
+using namespace StructLib;
 
-template <typename T>
-void Swap(T &num1, T &num2)
-{
-    T tmp = num1;
-    num1 = num2;
-    num2 = tmp;
-}
-
-
-template <typename T>
-class TempClass
+class Test
 {
 public:
-   T Process(T v)
-   {
-       return v * v;
-   }
+    Test()
+    {
+        cout << "Test()" << endl;
+    }
+    ~Test()
+    {
+        cout << "~Test()" << endl;
+    }
 };
+
 
 int main()
 {
-    int a = 3;
-    int b = 4;
-
-    Swap<int>(a, b);
-    cout << "a = " << a << " " << "b = " << b << endl;
-
-    TempClass<int> tempA;
-
-    cout << tempA.Process(4) << endl;
+    SmartPointer<Test> sp = new Test();
 
     return 0;
 }
