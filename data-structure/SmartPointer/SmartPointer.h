@@ -21,7 +21,7 @@ namespace StructLib
         SmartPointer(const SmartPointer<T>& obj)
         {
             m_pointer = obj.m_pointer;
-            const_cast<SmartPointer<T>&>(obj.m_pointer) = NULL;
+           // const_cast<SmartPointer<T>&>(obj.m_pointer) = NULL;
         }
         
 
